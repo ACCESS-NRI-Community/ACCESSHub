@@ -416,12 +416,6 @@ rose suite-run --reload
 
 ## {{ model }} output files
 All {{ model }} output files, together with work files, are available on _Gadi_ inside `/scratch/$PROJECT/$USER/cylc-run/<suite-ID>`. They are also symlinked in `~/cylc-run/<suite-ID>`.<br>
-While the suite is running, files are moved between the `share` and `work` directories.<br>
-At the end of each cycle, model output data and restart files are moved to `/scratch/$PROJECT/$USER/archive/<suite-name>`.<br>
-This directory contains two subdirectories:
-
-- `history`
-- `restart`
     
 ### Output data
 `/scratch/$PROJECT/$USER/cylc-run/<suite-name>/share/data/ancils` directory contains the ancillary data.  There is one directory for each nest within a nested region named <nested region name>/<nest name>. 
