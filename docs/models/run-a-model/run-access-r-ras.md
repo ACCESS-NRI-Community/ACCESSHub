@@ -262,10 +262,6 @@ For example, to run an {{ model }} suite for a region with centre (-12.4, 130.8)
 ![Rose change project example](/assets/run_access_ras/ras_edit_region_center_and_name.gif){: class="example-img" loading="lazy"}
 TO BE DONE
 
-!!! warning
-    To run {{ model }}, you need to be a member of a project with allocated _Service Units (SU)_. For more information, check how to [Join relevant NCI projects](/getting_started/set_up_nci_account#join-relevant-nci-projects).
-
-
 ## Run {{ model }} suite
 {{ model }} suites run on [_Gadi_](https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi#id-0.WelcometoGadi-Overview) through a [PBS job] submission.<br>
 When the suite runs, its configuration files are copied on _Gadi_ inside `/scratch/$PROJECT/$USER/cylc-run/<suite-ID>` and a symbolic link to this directory is also created in the `$USER`'s home directory under `~/cylc-run/<suite-ID>`.<br>
