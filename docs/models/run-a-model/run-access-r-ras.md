@@ -1,4 +1,4 @@
-{% set model = "ACCESS-R" %}
+{% set model = "ACCESS-RAS" %}
 {% set suite = "u-dg767" %}
 [PBS job]: https://opus.nci.org.au/display/Help/4.+PBS+Jobs
 
@@ -147,11 +147,10 @@ persistent-sessions kill <persistent-session-uuid>
 
 
 ## Get {{ model }} suite
-{{ model }} comprises the model components [UM](/models/model_components/atmosphere#unified-model-um) and [LAND](/models/model_components/land). These components, which have different model parameters, input data and computer-related information, need to be packaged together as a _suite_ in order to run.<br>
 Each {{ model }} suite has a `suite-ID` in the format `u-<suite-name>`, where `<suite-name>` is a unique identifier.<br>
 Typically, an existing suite is copied and then edited as needed for a particular run.
 
-For this example you can use `{{model}}`.<br>
+For this example you can use `{{ suite }}`.<br>
 
 ### Copy {{ model }} suite with Rosie
 [Rosie](http://metomi.github.io/rose/doc/html/tutorial/rose/rosie.html) is an [SVN](https://subversion.apache.org) repository wrapper with a set of options specific for {{ model }} suites.<br>
@@ -255,59 +254,16 @@ rose edit &
 </terminal-window>
     
 
-Regional forecasts are produced in two separate steps:
+### Change the region centre and nested region name
+The {{model}} suite is has region center and nested region name pre-filled for the Lismore Flood example.  
+To change these values, edit the _rg01_name_ and _rg01_centre_ fields in _suite conf &rarr; Regional Ancillary Suite; Nested region 1 setup_, and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.
 
-1) Ancillary files specific to the domain of interest need to be generated:
-
-[Produce ancillary files](/models/run-a-model/run-access-r-ras.md)  <br>
-
-2) A regional forecast/hindcast is generated specific to that domain of interest, although the timing can be changed:
-
-[Produce regional forecast/hindcast](/models/run-a-model/run-access-r-rns.md)  <br>
-
-
-
-### Rose
-[Rose](http://metomi.github.io/rose/doc/html/index.html) is a configuration editor which can be used to view, edit, or run an {{ model }} suite.
-
-To edit a suite configuration, run the following command from within the suite directory (i.e., `~/roses/<suite-ID>`) to open the _Rose_ GUI:
-```
-rose edit &
-```
-
-!!! tip
-    The `&` is optional. It allows the terminal prompt to remain active while running the `Rose` GUI as a separate process in the background.
-
-<terminal-window>
-    <terminal-line data="input">cd ~/roses/&lt;suite-ID&gt;</terminal-line>
-    <terminal-line data="input" directory="~/roses/&lt;suite-ID&gt;">rose edit &</terminal-line>
-    <terminal-line class="ls-output-format">[&lt;N&gt;] &lt;PID&gt;</terminal-line>
-    <terminal-line data="input" directory="~/roses/&lt;suite-ID&gt;"></terminal-line>
-    <img src="/assets/run_access_cm/Rose_GUI_are.png" alt="Rose GUI" imageTime="inf" loading="lazy">
-</terminal-window>
-    
-### Change NCI project
-To ensure that your suite is run under the correct NCI project for which you are a member, edit the _Compute project_ field in _suite conf &rarr; Machine and Runtime Options_, and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}. 
-
-For example, to run an {{ model }} suite under the `tm70` project (ACCESS-NRI), enter `tm70` in the _Compute project_ field:
-![Rose change project example](/assets/run_access_cm/rose_change_project_are.gif){: class="example-img" loading="lazy"}
+For example, to run an {{ model }} suite for a region with centre (-12.4, 130.8) and name "Darwin":
+![Rose change project example](/assets/run_access_ras/ras_edit_region_center_and_name.gif){: class="example-img" loading="lazy"}
+TO BE DONE
 
 !!! warning
     To run {{ model }}, you need to be a member of a project with allocated _Service Units (SU)_. For more information, check how to [Join relevant NCI projects](/getting_started/set_up_nci_account#join-relevant-nci-projects).
-
-### Change run length and cycling frequency
-{{ model }} suites are often run in multiple steps, each one constituting a cycle. The job scheduler resubmits the suite every chosen _Cycling frequency_ until the _Total Run length_ is reached. 
-
-To modify these parameters, navigate to _suite conf &rarr; Run Initialisation and Cycling_, edit the respective fields (using [ISO 8601 Duration](https://en.wikipedia.org/wiki/ISO_8601#Durations) format) and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.
-
-For example, to run a suite for a total of 50 years with a 1-year job resubmission, change _Total Run length_ to `P50Y` and _Cycling frequency_ to `P1Y` (the maximum _Cycling frequency_ is currently two years):
-
-![Rose change run length example](/assets/run_access_cm/rose_change_run_length_are.gif){: class="example-img" loading="lazy"}
-
-### Change wallclock time
-The _Wallclock time_ is the time requested by the [PBS job] to run a single cycle. If this time is insufficient for the suite to complete a cycle, your job will be terminated before completing the run. Hence, if you change the _Cycling frequency_, you may also need to change the _Wallclock time_ accordingly. While the time required for a suite to complete a cycle depends on several factors, a good estimation is 4 hours per simulated year.
-
-To modify the _Wallclock time_, edit the respective field in _suite conf &rarr; Run Initialisation and Cycling_ (using [ISO 8601 Duration](https://en.wikipedia.org/wiki/ISO_8601#Durations) format) and click the _Save_ button ![Save button](/assets/run_access_cm/save_button.png){: style="height:1em"}.
 
 
 ## Run {{ model }} suite
@@ -324,73 +280,8 @@ rose suite-run
 ```
 
 After the initial tasks are executed, the _Cylc_ GUI will open. You can now view and control the different tasks in the suite as they are run:
-<terminal-window lineDelay="50">
-    <terminal-line data="input" lineDelay="300">cd ~/roses/&lt;suite-ID&gt;</terminal-line>
-    <terminal-line data="input" directory="~/roses/&lt;suite-ID&gt;" lineDelay="300">rose suite-run</terminal-line>
-    <terminal-line>[INFO] export CYLC_VERSION=7.9.7</terminal-line>
-    <terminal-line>export ROSE_ORIG_HOST=&lt;gadi-cpu&gt;.gadi.nci.org.au</terminal-line>
-    <terminal-line>[INFO] export ROSE_SITE=nci</terminal-line>
-    <terminal-line>[INFO] export ROSE_VERSION=2019.01.7</terminal-line>
-    <terminal-line>[INFO] create: /home/565/&lt;$USER&gt;/cylc-run/&lt;suite-ID&gt;</terminal-line>
-    <terminal-line>[INFO] create: log.&lt;timestamp&gt;</terminal-line>
-    <terminal-line>[INFO] symlink: log.&lt;timestamp&gt; <= log</terminal-line>
-    <terminal-line>[INFO] create: log/suite</terminal-line>
-    <terminal-line>[INFO] create: log/rose-conf</terminal-line>
-    <terminal-line>[INFO] symlink: rose-conf/&lt;timestamp&gt;-run.conf <= log/rose-suite-run.conf</terminal-line>
-    <terminal-line>[INFO] symlink: rose-conf/&lt;timestamp&gt;-run.version <= log/rose-suite-run.version</terminal-line>
-    <terminal-line>[INFO] create: meta</terminal-line>
-    <terminal-line>[INFO] install: meta</terminal-line>
-    <terminal-line>&emsp;&emsp;&emsp;&emsp;source: /home/565/&lt;$USER&gt;/roses/&lt;suite-ID&gt;/meta</terminal-line>
-    <terminal-line>[INFO] install: rose-suite.info</terminal-line>
-    <terminal-line>&emsp;&emsp;&emsp;&emsp;source: /home/565/&lt;$USER&gt;/roses/&lt;suite-ID&gt;/rose-suite.info</terminal-line>
-    <terminal-line>[INFO] create: app</terminal-line>
-    <terminal-line>[INFO] install: app</terminal-line>
-    <terminal-line>&emsp;&emsp;&emsp;&emsp;source: /home/565/&lt;$USER&gt;/roses/&lt;suite-ID&gt;/app</terminal-line>
-    <terminal-line>[INFO] install: suite.rc</terminal-line>
-    <terminal-line>[INFO] REGISTERED &lt;suite-ID&gt; -> /home/565/&lt;$USER&gt;/cylc-run/&lt;suite-ID&gt;</terminal-line>
-    <terminal-line>[INFO] create: share</terminal-line>
-    <terminal-line>[INFO] create: share/cycle</terminal-line>
-    <terminal-line>[INFO] create: work</terminal-line>
-    <terminal-line>[INFO] chdir: log/</terminal-line>
-    <terminal-line>[WARN] Using the cylc session &lt;persistent-session-full-name&gt;</terminal-line>
-    <terminal-line>[WARN]</terminal-line>
-    <terminal-line>[WARN] Loading cylc7/23.09</terminal-line>
-    <terminal-line>[WARN] &emsp;Loading requirement: mosrs-setup/1.0.1</terminal-line>
-    <terminal-line>[INFO] &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;&thinsp;.&UnderBar;.</terminal-line>
-    <terminal-line>[INFO] &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;&thinsp;| |&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;The Cylc Suite Engine [7.9.7]</terminal-line>
-    <terminal-line>[INFO] .&UnderBar;&UnderBar;&UnderBar;&UnderBar;&UnderBar;.&UnderBar;. .&UnderBar;| |&UnderBar;&UnderBar;&UnderBar;&UnderBar;&UnderBar;.&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;Copyright (C) 2008-2019 NIWA</terminal-line>
-    <terminal-line>[INFO] | .&UnderBar;&UnderBar;&UnderBar;| | | | | .&UnderBar;&UnderBar;&UnderBar;|&emsp;& British Crown (Met Office) & Contributors.</terminal-line>
-    <terminal-line>[INFO] | !&UnderBar;&UnderBar;&UnderBar;| !&UnderBar;! | | !&UnderBar;&UnderBar;&UnderBar;. &UnderBar; &UnderBar; &UnderBar; &UnderBar; &UnderBar; &UnderBar; &UnderBar; &UnderBar; &UnderBar; &UnderBar; &UnderBar; &UnderBar; &UnderBar; &UnderBar; &UnderBar; &UnderBar; &UnderBar; &UnderBar; &UnderBar; &UnderBar; &UnderBar; &UnderBar; &UnderBar; &UnderBar;</terminal-line>
-    <terminal-line>[INFO] !&UnderBar;&UnderBar;&UnderBar;&UnderBar;&UnderBar;!&UnderBar;&UnderBar;&UnderBar;. |&UnderBar;!&UnderBar;&UnderBar;&UnderBar;&UnderBar;&UnderBar;! This program comes with ABSOLUTELY NO WARRANTY;</terminal-line>
-    <terminal-line>[INFO] &emsp;&emsp;&emsp;&thinsp;.&UnderBar;&UnderBar;&UnderBar;! | &emsp;&emsp;&emsp;&emsp;&emsp;see `cylc warranty`. &thinsp;It is free software, you</terminal-line>
-    <terminal-line>[INFO] &emsp;&emsp;&emsp;&thinsp;!&UnderBar;&UnderBar;&UnderBar;&UnderBar;&UnderBar;! &emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;are welcome to redistribute it under certain</terminal-line>
-    <terminal-line>[INFO]</terminal-line>
-    <terminal-line>[INFO] *** listening on https://&lt;persistent-session-full-name&gt;:&lt;port&gt;/ ***</terminal-line>
-    <terminal-line>[INFO]</terminal-line>
-    <terminal-line>[INFO] To view suite server program contact information:</terminal-line>
-    <terminal-line>[INFO]  $ cylc get-suite-contact &lt;suite-ID&gt;</terminal-line>
-    <terminal-line>[INFO]</terminal-line>
-    <terminal-line>[INFO] Other ways to see if the suite is still running:</terminal-line>
-    <terminal-line>[INFO]  $ cylc scan -n '&lt;suite-ID&gt;' &lt;persistent-session-full-name&gt;</terminal-line>
-    <terminal-line>[INFO]  $ cylc ping -v --host=&lt;persistent-session-full-name&gt; &lt;suite-ID&gt;</terminal-line>
-    <terminal-line>[INFO]  $ ps -opid,args &lt;PID&gt;  # on &lt;persistent-session-full-name&gt;</terminal-line>
-    <img src="/assets/run&UnderBar;access_cm/Cylc_GUI_are.png" alt="Cylc GUI" imageTime="inf" loading="lazy"> -->
-</terminal-window>
-
-!!! warning
-    After running the command `rose suite-run`, if you get an error similar to the following:
-    <pre><code><span style="color: orangered">[FAIL]</span> Suite "&lt;suite-ID&gt;" appears to be running:
-    <span style="color: orangered">[FAIL]</span> Contact info from: "/home/565/&lt;$USER&gt;/cylc-run/&lt;suite-ID&gt;/.service/contact"
-    <span style="color: orangered">[FAIL]</span>    CYLC_SUITE_HOST=&lt;persistent-session-full-name&gt;
-    <span style="color: orangered">[FAIL]</span>    CYLC_SUITE_OWNER=&lt;$USER&gt;
-    <span style="color: orangered">[FAIL]</span>    CYLC_SUITE_PORT=&lt;port&gt;
-    <span style="color: orangered">[FAIL]</span>    CYLC_SUITE_PROCESS=&lt;PID&gt; /g/data/hr22/apps/cylc7/bin/python -s /g/data/hr22/apps/cylc7/cylc_7.9.7/bin/cylc-run &lt;suite-ID&gt; --host=localhost
-    <span style="color: orangered">[FAIL]</span> Try "cylc stop '&lt;suite-ID&gt;'" first?</code></pre>
-    you should run (by substituting `<suite-ID>` with the _suite-ID_):
-    ```
-    rm "/home/565/${USER}/cylc-run/<suite-ID>/.service/contact"
-    ```
-    before running the `rose suite-run` command again.
+<img src="/assets/run&UnderBar;access_cm/Cylc_GUI_are.png" alt="Cylc GUI" imageTime="inf" loading="lazy">
+TO BE DONE
 
 You are done!
 
@@ -416,32 +307,9 @@ The suite's log directories are stored in `~/cylc-run/<suite-ID>` as `log.<TIMES
 The logs for the main job can be found in the `~/cylc-run/<suite-ID>/log/job` directory.<br>
 Logs are separated into simulation cycles according to their starting dates, and then differentiated by task. They are then further separated into "attempts" (consecutive failed/successful tasks), where `NN` is a symlink to the most recent attempt.
 
-In the example above, a failure occurred for the _09500101_ simulation cycle (i.e. starting date: 1st January 950) in the _coupled_ task. Hence, the `job.err` and `job.out` files can be found in the `~/cylc-run/<suite-ID>/log/job/09500101/coupled/NN` directory.
-<terminal-window>
-    <terminal-line data="input">cd ~/cylc-run/&lt;suite-ID&gt;</terminal-line>
-    <terminal-line data="input" directory="~/cylc-run/&lt;suite-ID&gt;">ls</terminal-line>
-    <terminal-line class="ls-output-format">app cylc-suite.db log log.20230530T051952Z meta rose-suite.info share suite.rc suite.rc.processed work</terminal-line>
-    <terminal-line data="input" directory="~/cylc-run/&lt;suite-ID&gt;">cd log</terminal-line>
-    <terminal-line data="input" directory="~/cylc-run/&lt;suite-ID&gt;/log">ls</terminal-line>
-    <terminal-line class="ls-output-format">db job rose.conf rose-suite-run.conf rose-suite-run.locs rose-suite-run.log rose-suite-run.version suite suiterc</terminal-line>
-    <terminal-line data="input" directory="~/cylc-run/&lt;suite-ID&gt;/log">cd job</terminal-line>
-    <terminal-line data="input" directory="~/cylc-run/&lt;suite-ID&gt;/log/job">ls</terminal-line>
-    <terminal-line class="ls-output-format">09500101</terminal-line>
-    <terminal-line data="input" directory="~/cylc-run/&lt;suite-ID&gt;/log/job">cd 09500101</terminal-line>
-    <terminal-line data="input" directory="~/cylc-run/&lt;suite-ID&gt;/log/job/09500101">ls</terminal-line>
-    <terminal-line class="ls-output-format">coupled fcm_make2_um fcm_make_um install_warm make2_mom make_mom fcm_make2_drivers fcm_make_drivers install_ancil make2_cice make_cice</terminal-line>
-    <terminal-line data="input" directory="~/cylc-run/&lt;suite-ID&gt;/log/job/09500101">cd coupled</terminal-line>
-    <terminal-line data="input" directory="~/cylc-run/&lt;suite-ID&gt;/log/job/09500101/coupled">ls</terminal-line>
-    <terminal-line class="ls-output-format">01 02 03 NN</terminal-line>
-    <terminal-line data="input" directory="~/cylc-run/&lt;suite-ID&gt;/log/job/09500101">cd NN</terminal-line>
-    <terminal-line data="input" directory="~/cylc-run/&lt;suite-ID&gt;/log/job/09500101/NN">ls</terminal-line>
-    <terminal-line class="ls-output-format">job job-activity.log job.err job.out job.status</terminal-line>
-</terminal-window>
+In the example above, a failure occurred for the "Lismore" default example, the `job.err` and `job.out` files can be found in the `~/cylc-run/{{model}}/log/job/1/` directory.
 
 ### Model Live Diagnostics
-
-ACCESS-NRI developed the [Model Live Diagnostics](/model_evaluation/model_diagnostics) framework to check, monitor, visualise, and evaluate model behaviour and progress of ACCESS models currently running on _Gadi_.<br>
-For a complete documentation on how to use this framework, check the [Model Live Diagnostics documentation](https://med-live-diagnostics.readthedocs.io/en/latest/index.html).
 
 ## Stop, restart and reload suites
 In some cases, you may want to control the running state of a suite.<br>
@@ -556,38 +424,13 @@ This directory contains two subdirectories:
 - `restart`
     
 ### Output data
-`/scratch/$PROJECT/$USER/archive/<suite-name>/history` is the directory containing the model output data, which is grouped according to each model component:
+`/scratch/$PROJECT/$USER/cylc-run/<suite-name>/share/data/ancils` directory contains the ancillary data.  There is one directory for each nest within a nested region named <nested region name>/<nest name>. 
+In the default two-level nest there is one nested region with three nests named era5, d1000 and d0198.  In this case the output directories:
+Lismore/era5
+Lismore/d1000
+Lismore/d0198
 
-- `atm` &rarr; atmosphere ([UM](/models/model_components/atmosphere#unified-model-um))
-- `cpl` &rarr; coupler ([OASIS-MCT](/models/model_components/coupler#oasis3-mct))
-- `ocn` &rarr; ocean ([MOM](/models/model_components/ocean#modular-ocean-model-mom))
-- `ice` &rarr; sea ice ([CICE](/models/model_components/sea-ice#cice))
-
-For the atmospheric output data, the files are typically a [UM fieldsfile](https://code.metoffice.gov.uk/doc/um/latest/papers/umdp_F03.pdf) or netCDF file, formatted as `<suite-name>a.p<output-stream-identifier><year><month-string>`.
-
-For the ` {{ suite }} ` suite in this example, the `atm` directory contains:
-<terminal-window>
-    <terminal-line data="input">cd /scratch/&lt;$PROJECT&gt;/&lt;$USER&gt;/archive</terminal-line>
-    <terminal-line data="input" directory="/scratch/&lt;$PROJECT&gt;/&lt;$USER&gt;/archive">ls</terminal-line>
-    <terminal-line class="ls-output-format">cy339 &lt;other-suite-name&gt; &lt;other-suite-name&gt;</terminal-line>
-    <terminal-line data="input" directory="/scratch/&lt;$PROJECT&gt;/&lt;$USER&gt;/archive">cd cy339</terminal-line>
-    <terminal-line data="input" directory="/scratch/&lt;$PROJECT&gt;/&lt;$USER&gt;/archive/cy339">ls</terminal-line>
-    <terminal-line class="ls-output-format">history restart</terminal-line>
-    <terminal-line data="input" directory="/scratch/&lt;$PROJECT&gt;/&lt;$USER&gt;/archive/cy339">ls history/atm</terminal-line>
-    <terminal-line class="ls-output-format">cy339a.pd0950apr.nc cy339a.pd0950aug.nc cy339a.pd0950dec.nc cy339a.pd0950feb.nc cy339a.pd0950jan.nc cy339a.pd0950jul.nc cy339a.pd0950jun.nc cy339a.pd0950mar.nc cy339a.pd0950may.nc cy339a.pd0950nov.nc cy339a.pd0950oct.nc cy339a.pd0950sep.nc cy339a.pd0951apr.nc cy339a.pd0951aug.nc cy339a.pd0951dec.nc cy339a.pm0950apr.nc cy339a.pm0950aug.nc cy339a.pm0950dec.nc cy339a.pm0950feb.nc cy339a.pm0950jan.nc cy339a.pm0950jul.nc cy339a.pm0950jun.nc cy339a.pm0950mar.nc cy339a.pm0950may.nc cy339a.pm0950nov.nc cy339a.pm0950oct.nc cy339a.pm0950sep.nc cy339a.pm0951apr.nc cy339a.pm0951aug.nc cy339a.pm0951dec.nc netCDF</terminal-line>
-</terminal-window>
-
-### Restart files
-The restart files can be found in the `/scratch/$PROJECT/$USER/archive/<suite-name>/restart` directory, where they are categorised according to model components (similar to the `history` folder above).<br>
-The atmospheric restart files, which are [UM fieldsfiles](https://code.metoffice.gov.uk/doc/um/latest/papers/umdp_F03.pdf), are formatted as `<suite-name>a.da<year><month><day>_00`.
-
-For the ` {{ suite }} ` suite in this example, the `atm` directory contains:
-<terminal-window>
-    <terminal-line data="input">ls /scratch/&lt;$PROJECT&gt;/&lt;$USER&gt;/archive/cy339/restart/atm</terminal-line>
-    <terminal-line class="ls-output-format">cy339a.da09500201_00 cy339a.da09510101_00 cy339.xhist-09500131 cy339.xhist-09501231 </terminal-line>
-</terminal-window>
-
-Files formatted as `<suite-name>a.xhist-<year><month><day>` contain metadata information.
+For the ancillary data, the files are typically a [UM fieldsfile](https://code.metoffice.gov.uk/doc/um/latest/papers/umdp_F03.pdf) or namelist files.
 
 <custom-references>
 - [https://nespclimate.com.au/wp-content/uploads/2020/10/Instruction-document-Getting_started_with_ACCESS.pdf](https://nespclimate.com.au/wp-content/uploads/2020/10/Instruction-document-Getting_started_with_ACCESS.pdf)
