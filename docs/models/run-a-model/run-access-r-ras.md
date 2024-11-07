@@ -439,4 +439,3 @@ For the ancillary data, the files are typically a [UM fieldsfile](https://code.m
 - [https://opus.nci.org.au/display/Help/Persistent+Sessions](https://opus.nci.org.au/display/Help/Persistent+Sessions)
 </custom-references>
 
-## Edit {{ model }} suite configuration
