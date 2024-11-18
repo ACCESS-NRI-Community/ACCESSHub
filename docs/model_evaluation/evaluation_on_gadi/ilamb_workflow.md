@@ -70,18 +70,14 @@ While these files can be self-defined, ACCESS-NRI provides the necessary files a
 <br>
 NCI hosts replicas of the <i>ILAMB</i> observational data sets through the NCI project <a href="https://my.nci.org.au/mancini/project/ct11/join" target="_blank">ct11</a> as well as a large amount of model outputs are available on <i>Gadi</i>, such as ACCESS model output.
 
-For more information, refer to <a href="\model_evaluation/model_evaluation_observational_catalogs" target="_blank">Observational Data Catalogue</a> on how to find observational data on NCI and <a href="\model_evaluation/model_evaluation_model_catalogs" target="_blank">ACCESS-NRI Intake Catalog</a> for how to find model outputs.
+For more information, refer to <a href="\model_evaluation/data/observations" target="_blank">Observational Data Catalogue</a> on how to find observational data on NCI and <a href="\model_evaluation/data/model_catalogs" target="_blank">ACCESS-NRI Intake Catalog</a> for how to find model outputs.
 <br>
 To learn more about how to adjust the <i>ILAMB</i> setup, refer to the official <a href="https://www.ilamb.org/doc/" target="_blank">ILAMB documentation</a> and relevant <a href="https://www.ilamb.org/doc/tutorial.html" target="_blank">tutorials</a>.
 
 ## Example: CMIP6 comparisons and ACCESS ESM1.5 benchmarking
 
-ACCESS-NRI is maintaining a collection of benchmark comparisons for the ACCESS community, such as that with Coupled Model Intercomparison Project (CMIP) data:
+ACCESS-NRI is maintaining a collection of benchmark comparisons for the ACCESS community, such as that with Coupled Model Intercomparison Project (CMIP) data, see in the <a href="https://ilamb-workflow.readthedocs.io/en/latest/source/ILAMB.html#ilamb-cmip-confrontations-maintained-by-access-nri" target="_blank">workflow documentation.</a>
 
-- <a href="http://130.56.247.78/build_oi10_2/index.html" target="_blank">CMIP5 and CMIP6 Land Models</a>  
-- <a href="http://130.56.247.78/build_al33/index.html" target="_blank">CMIP6 Land Models</a>  
-- <a href="http://130.56.247.78/build_rr3/index.html" target="_blank">Offline CMIP6 Models</a> 
-- <a href="http://130.56.247.78/build_iomb/index.html" target="_blank">CMIP5 and CMIP6 Ocean Models</a>
 
 In the following example, the supported ACCESS Earth System Model (ESM) <a href="\models/configurations/access-esm#access-esm1.5" target="_blank">ACCESS-ESM1.5</a> is compared with two other ESM models:
 
