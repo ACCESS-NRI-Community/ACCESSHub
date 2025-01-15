@@ -63,16 +63,17 @@ The suggested workflow for a contribution on the ACCESS-Hive Docs is detailed be
 4. **Keep your branch in sync with the `development` branch**
     Sometimes, while you make changes for your contribution, other commits can be added to the upstream (remote) `development` branch. 
     It is good practice to always keep your branch in sync with the latest updates of the `development` branch, before opening a Pull Request and have your contribution reviewed.
-    For syncing our feature branch into the main branch, use the following 
-    commands: 
+    For syncing your feature branch with the upstream `development` branch, use the following 
+    command: 
 
-    ```ruby
-    # Skip this step if you are already working on feature branch 
-    git checkout john/fix-title-800
-
-    # Moves the entire feature branch on the tip of main branch
-    git rebase origin main  # or git pull --rebase
     ```
+    git rebase origin/development jasmeen/improve-how-to-contribute-812
+    ```
+    
+    > [!WARNING]
+    > After rebasing, you might have to resolve conflicts.
+    > Also, to push commits of a local branch after rebasing you might need to use `git push --force-with-lease` (`--force-with-lease` is a safer alternative to `--force`).
+    > For these reasons, always use `git rebase` carefully. Don't hesitate to have a chat with the Hive Docs team if unsure :) 
 
 5. **DEPLOYING WEBSITE PREVIEW**
 
