@@ -28,7 +28,7 @@ The suggested workflow for a contribution on the ACCESS-Hive Docs is detailed be
 2. **Raise an issue about the contribution**
     Before working on a contribution, it is always good practice to have a GitHub issue detailing the content of the contribution and why it is important. 
     If not already present, open a [new issue](https://github.com/ACCESS-NRI/access-hive.org.au/issues/new?template=simple-issue-template.md) about your contribution.
-2. **MAKE CHANGES LOCALLY**
+3. **Create a new git branch**
 
     For making changes locally, open your preferred IDE (ex. VSCode). 
     And in the terminal, create a new branch to make your local changes and then push it to GitHub:
