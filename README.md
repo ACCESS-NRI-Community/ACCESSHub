@@ -63,15 +63,6 @@ The suggested workflow for a contribution on the ACCESS-Hive Docs is detailed be
 4. **Keep your branch in sync with the `development` branch**
     Sometimes, while you make changes for your contribution, other commits can be added to the upstream (remote) `development` branch. 
     It is good practice to always keep your branch in sync with the latest updates of the `development` branch, before opening a Pull Request and have your contribution reviewed.
-    There are two main methods for integrating feature branch with the main branch:
-
-    - Merge (creates a merge commit for every `git merge`)
-    - Rebase (fast-forward merge, and linear history) 
-
-    Recently, we are transitioning to using `git rebase` as one of the steps in our development workflow.
-    This would give an opportunity to polish a feature branch before merging into the main, and also avoiding
-    additional merge commits in the project history.
-
     For syncing our feature branch into the main branch, use the following 
     commands: 
 
