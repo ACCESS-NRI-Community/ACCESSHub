@@ -20,9 +20,7 @@ The ACCESS-Hive Docs website is built using [Material for MkDocs](https://squidf
 The suggested workflow for a contribution on the ACCESS-Hive Docs is detailed below:
 1. **Clone the ACCESS-Hive Docs GitHub repo**
 
-    On [GitHub](https://github.com/ACCESS-NRI/access-hive.org.au), click on the **< > Code** button (top-right) and copy the SSH remote URL (starts with git@github.com). 
-    
-    Now, run the following command in your local terminal to clone the ACCESS-Hive GitHub repository:
+    To clone the [ACCESS-Hive Docs](https://github.com/ACCESS-NRI/access-hive.org.au) GitHub repo, run the following command in your local terminal:
 
     ```ruby
     $ git clone git@github.com:ACCESS-NRI/access-hive.org.au.git
