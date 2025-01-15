@@ -30,19 +30,10 @@ The suggested workflow for a contribution on the ACCESS-Hive Docs is detailed be
     If not already present, open a [new issue](https://github.com/ACCESS-NRI/access-hive.org.au/issues/new?template=simple-issue-template.md) about your contribution.
 3. **Create a new git branch**
 
-    For making changes locally, open your preferred IDE (ex. VSCode). 
-    And in the terminal, create a new branch to make your local changes and then push it to GitHub:
-
-    ```ruby
-    # Create a new branch, name it as - <name>/<issue-summary>-<issue-no>
-
-    $ git checkout -b john/fix-title-800
+    Create a new `git` branch for your new contribution, starting from the `development` branch.
+    A suggested way to call it is in the format `<name>/<issue-summary>-<issue-number>`, for example `jasmeen/improve-how-to-contribute-812`:
     ```
-
-    ```ruby
-    # Push the branch to upstream
-
-    $ git push --set-upstream origin john/fix-title-800  
+    git checkout -b jasmeen/improve-how-to-contribute-812 origin/development
     ```
 
 3. **COMMIT AND PUSH CHANGES**
