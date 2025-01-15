@@ -17,7 +17,7 @@ If you wish to add documentation to the ACCESS-Hive Docs website check the [cont
 ## For [ACCESS-NRI GitHub Organisation](https://github.com/ACCESS-NRI) members
 
 The ACCESS-Hive Docs website is built using [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/). For detailed information on markdown syntax and different features, please refer to [mkdocs-material documentation](https://squidfunk.github.io/mkdocs-material/reference/).
-
+The suggested workflow for a contribution on the ACCESS-Hive Docs is detailed below:
 1. **CLONE**
 
     On [GitHub](https://github.com/ACCESS-NRI/access-hive.org.au), click on the **< > Code** button (top-right) and copy the SSH remote URL (starts with git@github.com). 
