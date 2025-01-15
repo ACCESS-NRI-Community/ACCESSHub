@@ -14,7 +14,7 @@ The ACCESS-Hive Docs website hosts the documentation for ACCESS users: getting s
 
 If you wish to add documentation to the ACCESS-Hive Docs website check the [contribution guide](https://access-hive.org.au/about/contribute/) for instructions.
 
-### II. For [ACCESS-NRI GitHub Organisation](https://github.com/ACCESS-NRI) members
+## For [ACCESS-NRI GitHub Organisation](https://github.com/ACCESS-NRI) members
 
 The ACCESS-Hive Docs website is built using [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/). For detailed information on markdown syntax and different features, please refer to [mkdocs-material documentation](https://squidfunk.github.io/mkdocs-material/reference/).
 
