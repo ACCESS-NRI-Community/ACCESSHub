@@ -10,7 +10,7 @@ https://access-hive.org.au/
 The ACCESS-Hive Docs website hosts the documentation for ACCESS users: getting set up, running models and model evaluation.
 
 # How to Contribute
-### I. For New Users
+## For New Users
 
 If you wish to add documentation to the ACCESS-Hive Docs website check the [contribution guide](https://access-hive.org.au/about/contribute/) for instructions.
 
