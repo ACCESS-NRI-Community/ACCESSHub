@@ -60,7 +60,7 @@ The suggested workflow for a contribution on the ACCESS-Hive Docs is detailed be
     
     Repeat these steps as many times as you want, until you are satisfied with all the changes and you are ready for your contribution to be reviewed.
 
-4. **BE IN SYNC WITH THE `development` BRANCH**
+4. **Keep your branch in sync with the `development` branch**
     
     There are two main methods for integrating feature branch with the main branch:
 
