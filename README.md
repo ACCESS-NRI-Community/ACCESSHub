@@ -36,33 +36,29 @@ The suggested workflow for a contribution on the ACCESS-Hive Docs is detailed be
     git checkout -b jasmeen/improve-how-to-contribute-812 origin/development
     ```
 
-3. **COMMIT AND PUSH CHANGES**
+3. **Make changes, commit and push to the remote repo**
 
-    Make your desired changes to the branch `john/fix-title-800`, and push the commits to remote: 
+    While you are in your new `git` branch, make your desired changes, commit your changes, and push the commits to the remote repo: 
 
-    ```ruby
-    # Stage the current local directory
-
-    $ git add .
     ```
+    # Stage the desired files
+    git add ...
 
-    ```ruby
-    # Commit the changes, include linked issue ID and meaningful commit descriptions.
-
+    # Commit the changes, including a meaningful commit descriptions.
     # Avoid general descriptions, such as 'a fix', 'useful change', 'home page bug fixes' etc.
-
-    $ git commit -m "(#800) Camel-cased hive title!"
-    ```
-
-    ```ruby
-    # Push the changes to the remote of your branch
-
-    $ git push origin john/fix-title-800 
-
-    # or, if the remote is known, run 
+    git commit -m "Improved how-to-contribute instructions in the README."
     
-    $ git push
+    # Push the changes to the remote
+    git push 
     ```
+    
+    > [!TIP]
+    > The first that you push your new `git` branch to the remote, you will have to set its upstream with:
+    > ```
+    > git push --set-upstream origin jasmeen/improve-how-to-contribute-812
+    > ```
+    
+    Repeat these steps as many times as you want, until you are satisfied with all the changes and you are ready for your contribution to be reviewed.
 
 4. **BE IN SYNC WITH THE `development` BRANCH**
     
