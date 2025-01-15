@@ -61,7 +61,8 @@ The suggested workflow for a contribution on the ACCESS-Hive Docs is detailed be
     Repeat these steps as many times as you want, until you are satisfied with all the changes and you are ready for your contribution to be reviewed.
 
 4. **Keep your branch in sync with the `development` branch**
-    
+    Sometimes, while you make changes for your contribution, other commits can be added to the upstream (remote) `development` branch. 
+    It is good practice to always keep your branch in sync with the latest updates of the `development` branch, before opening a Pull Request and have your contribution reviewed.
     There are two main methods for integrating feature branch with the main branch:
 
     - Merge (creates a merge commit for every `git merge`)
