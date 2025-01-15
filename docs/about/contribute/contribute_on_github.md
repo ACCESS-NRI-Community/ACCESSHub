@@ -12,7 +12,7 @@ For a quick reference on how to use Markdown syntax you can refer to the [Markdo
 
 ## Raise a GitHub Issue
 
-All contributions need to have an associated [GitHub issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/) that explains the content and importance of the contribution. To raise an issue, create a new issue in the [ACCESS-Hive Docs GitHub repository issue page](https://github.com/ACCESS-NRI/access-hive.org.au/issues). Feel free to assign that issue to yourself if you intend to work on it.
+All contributions need to have an associated [GitHub issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/) that explains the content and importance of the contribution. If your contribution does not already have an associated issue, [create a new issue](https://github.com/ACCESS-NRI/access-hive.org.au/issues/new?template=simple-issue-template.md) related to it. Feel free to assign the related issue to yourself if you intend to work on it.
 
 ## Fork the ACCESS-Hive Docs GitHub repository
 
