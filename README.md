@@ -26,8 +26,10 @@ The suggested workflow for a contribution on the ACCESS-Hive Docs is detailed be
     git clone git@github.com:ACCESS-NRI/access-hive.org.au.git
     ```
 2. **Raise an issue about the contribution**
+
     Before working on a contribution, it is always good practice to have a GitHub issue detailing the content of the contribution and why it is important. 
     If not already present, open a [new issue](https://github.com/ACCESS-NRI/access-hive.org.au/issues/new?template=simple-issue-template.md) about your contribution.
+
 3. **Create a new git branch**
 
     Create a new `git` branch for your new contribution, starting from the `development` branch.
@@ -52,8 +54,7 @@ The suggested workflow for a contribution on the ACCESS-Hive Docs is detailed be
     git push 
     ```
     
-    > [!TIP]
-    > The first that you push your new `git` branch to the remote, you will have to set its upstream with:
+    > **Tip**: When you push your new `git` branch to the remote for the first time, you will need to set its upstream with:
     > ```
     > git push --set-upstream origin jasmeen/improve-how-to-contribute-812
     > ```
@@ -61,6 +62,7 @@ The suggested workflow for a contribution on the ACCESS-Hive Docs is detailed be
     Repeat these steps as many times as you want, until you are satisfied with all the changes and you are ready for your contribution to be reviewed.
 
 4. **Keep your branch in sync with the `development` branch**
+
     Sometimes, while you make changes for your contribution, other commits can be added to the upstream (remote) `development` branch. 
     It is good practice to always keep your branch in sync with the latest updates of the `development` branch, before opening a Pull Request and have your contribution reviewed.
     For syncing your feature branch with the upstream `development` branch, use the following 
@@ -69,32 +71,21 @@ The suggested workflow for a contribution on the ACCESS-Hive Docs is detailed be
     ```
     git rebase origin/development jasmeen/improve-how-to-contribute-812
     ```
-    
-    > [!WARNING]
-    > After rebasing, you might have to resolve conflicts.
+
+    > **Warning:** After rebasing, you might have to resolve conflicts.
     > Also, to push commits of a local branch after rebasing you might need to use `git push --force-with-lease` (`--force-with-lease` is a safer alternative to `--force`).
     > For these reasons, always use `git rebase` carefully. Don't hesitate to have a chat with the Hive Docs team if unsure :) 
 
 5. **Deploy website preview**
 
     During development, you can preview the changes made using [MkDocs live preview server](https://access-hive.org.au/about/contribute/contribute_on_github/#deploying-website-preview).
-6. **REVIEWING A FEATURE WITH THE PULL REQUEST**
-    
-    Once we are happy with the commits in the feature branch, [create a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request)
-    and GitHub will automatically build a preview of the documentation using
-    [GitHub Actions](https://docs.github.com/en/actions). 
 
+6. **Open a Pull Request**
+
+    Once you are happy with your contribution, [create a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) to have it reviewed by the ACCESS-Hive Docs team.
     Feel free to assign `ACCESS-NRI/WebOps` team as reviewers.
 
-> **Note** - The active branch is `development`. The `main` branch is only updated weekly 
-with automatic merging (from `development` branch only).
-
-> **Caution**: Use `git rebase` carefully and never use it on the commits that have already 
-been merged in the main branch. It would appear that the project history is abruptly changed. 
-Don't hesitate to chat with the hive docs team if unsure... :) 
-
-> _Reference: [Atlassian Rebase tutorial](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase)_
-, _[Atlassian Merging vs Rebasing tutorial](https://www.atlassian.com/git/tutorials/merging-vs-rebasing)_
+    > **Note**: The ACCESS-Hive Docs repo's default branch is `development`. The `main` branch is automatically updated daily by merging the `development` branch.
 
 
 ## Styling guidelines for developers
