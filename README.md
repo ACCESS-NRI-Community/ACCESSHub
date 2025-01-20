@@ -22,8 +22,8 @@ The suggested workflow for a contribution on the ACCESS-Hive Docs is detailed be
 
     To clone the [ACCESS-Hive Docs](https://github.com/ACCESS-NRI/access-hive.org.au) GitHub repo, run the following command in your local terminal:
 
-    ```ruby
-    $ git clone git@github.com:ACCESS-NRI/access-hive.org.au.git
+    ```
+    git clone git@github.com:ACCESS-NRI/access-hive.org.au.git
     ```
 2. **Raise an issue about the contribution**
     Before working on a contribution, it is always good practice to have a GitHub issue detailing the content of the contribution and why it is important. 
