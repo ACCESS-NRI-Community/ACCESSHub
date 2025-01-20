@@ -75,10 +75,9 @@ The suggested workflow for a contribution on the ACCESS-Hive Docs is detailed be
     > Also, to push commits of a local branch after rebasing you might need to use `git push --force-with-lease` (`--force-with-lease` is a safer alternative to `--force`).
     > For these reasons, always use `git rebase` carefully. Don't hesitate to have a chat with the Hive Docs team if unsure :) 
 
-5. **DEPLOYING WEBSITE PREVIEW**
+5. **Deploy website preview**
 
-    During development, preview the changes made using [MkDocs live preview server](https://access-hive.org.au/about/contribute/contribute_on_github/#deploying-website-preview).
-
+    During development, you can preview the changes made using [MkDocs live preview server](https://access-hive.org.au/about/contribute/contribute_on_github/#deploying-website-preview).
 6. **REVIEWING A FEATURE WITH THE PULL REQUEST**
     
     Once we are happy with the commits in the feature branch, [create a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request)
