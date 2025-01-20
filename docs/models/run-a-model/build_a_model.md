@@ -13,7 +13,7 @@
 The instructions below outline how to build an ACCESS model and its dependencies, using the build-from-source package manager [Spack](https://spack.readthedocs.io).<br>
 This build workflow is specifically designed to run on the [National Computating Infrastructure (NCI)](https://nci.org.au/about-us/who-we-are) supercomputer [_Gadi_][gadi].
 
-As an example, in the following instructions we will show how to modify [mom5 component](/models/model_components/ocean/#mom5) for [ACCESS-ESM1.5](/models/configurations/access-esm/#access-esm15) and re-compile the relevant ACCESS-ESM1.5 dependencies. All the other components and packages (i.e., dependencies) will remain the same as the official [ACCESS-ESM1.5 release]({{esm1_5_build_config}}).
+As an example, in the following instructions we will show how to modify [MOM5 component](/models/model_components/ocean/#mom5) for [ACCESS-ESM1.5](/models/configurations/access-esm/#access-esm15) and re-compile the relevant ACCESS-ESM1.5 dependencies. All the other components and packages (i.e., dependencies) will remain the same as the official [ACCESS-ESM1.5 release]({{esm1_5_build_config}}).
 
 !!! tip
     The instructions below remain valid (with simple tweaks) for any model or package.

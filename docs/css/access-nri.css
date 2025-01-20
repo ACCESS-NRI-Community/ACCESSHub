@@ -1089,13 +1089,14 @@ img.terminalSwitch:hover {
 }
 
 /* =============================================================== 
-  Virtural terminal colours for Spack output
+  Virtural terminal colours for Spack and Git output
 */
 
 .spack-red {
   color: #FF6E67;
 }
-.spack-highlighted {
+.spack-highlighted,
+.git-highlighted {
   color: #FFFFFF;
   font-weight: 600;
 }
@@ -1105,7 +1106,8 @@ img.terminalSwitch:hover {
 .spack-indigo {
   color: #6871FF;
 }
-.spack-green{
+.spack-green,
+.git-green {
   color: #00C200;
 }
 .spack-pink {
@@ -1120,6 +1122,12 @@ img.terminalSwitch:hover {
   color: #60FA67;
 }
 
+.git-red {
+    color: #C91A00;
+}
+.git-cyan {
+    color: #00C6C7;
+}
 
 /* =============================================================== 
   General styling for html tabs
@@ -1218,8 +1226,8 @@ img.intro-img {
 /* Gifs, videos and example images (For example the ones in 'how to run' a model */
 .example-img {
   display: block;
-  width: 100%;
-  border-radius: 0.6rem;
+  width: 90%;
+  border-radius: 0.2rem;
 }
 
 /* Justified text */

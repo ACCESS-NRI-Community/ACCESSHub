@@ -124,6 +124,7 @@ nav:
     - Run ACCESS-ESM: models/run-a-model/run-access-esm.md
     - Run ACCESS-OM: models/run-a-model/run-access-om.md
     - Modify an ACCESS model's source code: models/run-a-model/build_a_model.md
+    - Creating Pre/Releases for an ACCESS Model: models/run-a-model/create-a-prerelease.md
 
   - Data and Model Evaluation:
     - model_evaluation/index.md
