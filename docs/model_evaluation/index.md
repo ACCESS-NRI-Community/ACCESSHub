@@ -19,6 +19,13 @@ If you are new to MED and are wondering [*"What is Model Evaluation and Diagnost
         </div>
         <div class="card-text-container bold ">Model Evaluation</div>
     </a>
+        </a>
+    <a href="/model_evaluation/community_med" class="vertical-card aspect-ratio1to1">
+         <div class="card-image-container">
+             <img class="img-cover" src="/assets/external-links.jpg" alt="External Resources and Links">
+         </div>
+         <div class="card-text-container bold">Additional Resources</div>
+     </a>
 </div>
 
 <!-- 
