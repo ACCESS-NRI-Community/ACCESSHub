@@ -16,7 +16,7 @@ While ACCESS-RAM3 has been configured with a default two-level nest, subsequent 
 
 ### Model components 
 
-- **Atmosphere and land**:
+**Atmosphere and land**:
    - Nests with spatial resolution > 4km: [GAL9 science configuration](https://doi.org/10.5194/gmd-12-1909-2019) (70 vertical levels)  
 
-  - Nests with spatial resolution ≤ 4km: [RAL3.2 science configuration](https://10.5194/gmd-2024-201) (90 vertical levels)  
+   - Nests with spatial resolution ≤ 4km: [RAL3.2 science configuration](https://10.5194/gmd-2024-201) (90 vertical levels)  
