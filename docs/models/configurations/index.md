@@ -35,16 +35,16 @@
         </div>
     </a>
     <!--
-    Need to update CM image with RAM figure
+    Need to update AM image with RAM figure
     --> 
-    <a href="/models/configurations/access-cm/" class="horizontal-card">
+    <a href="/models/configurations/access-ram/" class="horizontal-card">
         <div class="card-image-container">
-            <img src="/assets/model-config-logos/configurations-without-titles/access-cm.png" class="white-background img-contain"></img> 
+            <img src="/assets/model-config-logos/configurations-without-titles/access-am.png" class="white-background img-contain"></img> 
         </div>
         <div class="card-text-container">
             <span class="bold" >ACCESS-RAM</span>
             <span>
-                ACCESS-RAM is an implementation of the UM regional nesting suite that uses ERA5 for both the initial conditions and driving conditions at the lateral boundaries. The land-surface initial conditions can be replaced with ERA5-land or BARRA-R2.
+                ACCESS-RAM is an implementation of the UM regional nesting suite that uses ERA5 for lateral boundary driving conditions and initial conditions, with an option to replace land-surface with ERA5-land or BARRA-R2.
             </span>
         </div>
     </a>
