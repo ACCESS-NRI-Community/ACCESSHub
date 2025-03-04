@@ -39,6 +39,17 @@ ACCESS models are computer codes comprising complex mathematical representations
             </span>
         </div>
     </a>
+    <a href="/models/configurations/access-ram/" class="horizontal-card">
+        <div class="card-image-container">
+            <img src="/assets/model-config-logos/configurations-without-titles/access-am.png" class="white-background img-contain"></img> 
+        </div>
+        <div class="card-text-container">
+            <span class="bold" >ACCESS-RAM</span>
+            <span>
+                ACCESS-RAM is an implementation of the UM regional nesting suite that uses ERA5 for lateral boundary driving conditions and initial conditions, with an option to replace land-surface with ERA5-land or BARRA-R2.
+            </span>
+        </div>
+    </a>
 </div>
 
 ## ACCESS Model Components
