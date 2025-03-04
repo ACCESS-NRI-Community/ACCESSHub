@@ -383,7 +383,7 @@ To access a specific task, click on the arrow next to the task to extend the dro
 #### Through the suite directory
 The suite's log directories are stored in `~/cylc-run/<suite-ID>` as `log.<TIMESTAMP>`, and the latest set of logs are also symlinked in the `~/cylc-run/<suite-ID>/log` directory.<br>
 The logs for the main job can be found in the `~/cylc-run/<suite-ID>/log/job` directory.<br>
-Logs are separated into simulation cycles according to their starting dates, and then differentiated by task. They are then further separated into "attempts" (consecutive failed/successful tasks), where `NN` is a symlink to the most recent attempt.
+Logs are separated into simulation cycles according to their starting dates, then divided into subdirectories according to the task name. They are then further separated into "attempts" (consecutive failed/successful tasks), where `NN` is a symlink to the most recent attempt.
 
 In the example above, a failure occurred for the _09500101_ simulation cycle (i.e. starting date: 1st January 950) in the _coupled_ task. Hence, the `job.err` and `job.out` files can be found in the `~/cylc-run/<suite-ID>/log/job/09500101/coupled/NN` directory.
 <terminal-window>

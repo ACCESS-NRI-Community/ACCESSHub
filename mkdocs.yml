@@ -101,11 +101,12 @@ nav:
   - Models: 
     - Models: models/index.md
     - Model Configurations: 
-      - Overview: models/configurations/index.md
+      - Supported ACCESS Model Configurations: models/configurations/index.md
       # - ACCESS-AM: models/configurations/access-am.md
       - ACCESS-CM: models/configurations/access-cm.md
       - ACCESS-ESM: models/configurations/access-esm.md
       - ACCESS-OM: models/configurations/access-om.md
+      - ACCESS-RAM: models/configurations/access-ram.md
     - Model Components: 
       - Overview: models/model_components/index.md
       - Atmosphere: models/model_components/atmosphere.md
@@ -123,6 +124,7 @@ nav:
     - Run ACCESS-CM: models/run-a-model/run-access-cm.md
     - Run ACCESS-ESM: models/run-a-model/run-access-esm.md
     - Run ACCESS-OM: models/run-a-model/run-access-om.md
+    - Run ACCESS-RAM: models/run-a-model/run-access-ram.md
     - Modify an ACCESS model's source code: models/run-a-model/build_a_model.md
     - Creating Prereleases and Releases for an ACCESS Model: models/run-a-model/create-a-prerelease.md
 

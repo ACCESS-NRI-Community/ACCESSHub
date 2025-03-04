@@ -1,6 +1,6 @@
-# Supported ACCESS Model Configurations
-
+<!-- This entire file is used as a snippet in other pages -->
 <div class="card-container">
+    <!-- ACCESS-CM -->
     <a href="/models/configurations/access-cm/" class="horizontal-card">
         <div class="card-image-container">
             <img src="/assets/model-config-logos/configurations-without-titles/access-cm.png" class="white-background img-contain"></img> 
@@ -12,6 +12,7 @@
             </span>
         </div>
     </a>
+    <!-- ACCESS-ESM -->
     <a href="/models/configurations/access-esm/" class="horizontal-card">
         <div class="card-image-container">
             <img src="/assets/model-config-logos/configurations-without-titles/access-esm.png" class="white-background img-contain"></img> 
@@ -23,6 +24,7 @@
             </span>
         </div>
     </a>
+    <!-- ACCESS-OM -->
     <a href="/models/configurations/access-om/" class="horizontal-card">
         <div class="card-image-container">
             <img src="/assets/model-config-logos/configurations-without-titles/access-om.png" class="white-background img-contain"></img> 
@@ -31,6 +33,18 @@
             <span class="bold" >ACCESS-OM</span>
             <span>
                 ACCESS-OM is a global coupled ocean and sea ice model used to understand both physical and biogeochemical processes in the ocean.
+            </span>
+        </div>
+    </a>
+    <!-- ACCESS-RAM -->
+    <a href="/models/configurations/access-ram/" class="horizontal-card">
+        <div class="card-image-container">
+            <img src="/assets/model-config-logos/configurations-without-titles/access-om.png" class="white-background img-contain"></img> 
+        </div>
+        <div class="card-text-container">
+            <span class="bold" >ACCESS-RAM</span>
+            <span>
+                ACCESS-RAM -- add text here. Also add correct image.
             </span>
         </div>
     </a>

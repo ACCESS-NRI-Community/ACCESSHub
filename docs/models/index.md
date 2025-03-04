@@ -5,41 +5,8 @@
 ACCESS models are computer codes comprising complex mathematical representations of major Earth system components (atmosphere, land surface, ocean and sea ice) based on physical, biological and chemical principles or laws. Different ACCESS model components can be linked together via a coupler to form ACCESS model configurations (e.g. ACCESS-ESM), which are then used to simulate realistic past or future conditions and idealised experiments.
 
 ## Supported ACCESS Model Configurations
-<div class="card-container">
-    <a href="/models/configurations/access-cm/" class="horizontal-card">
-        <div class="card-image-container">
-            <img src="/assets/model-config-logos/configurations-without-titles/access-cm.png" class="white-background img-contain"></img> 
-        </div>
-        <div class="card-text-container">
-            <span class="bold" >ACCESS-CM</span>
-            <span>
-                ACCESS-CM is a global climate model that includes the atmosphere, land, ocean and sea-ice components, and produces physical climate simulations.
-            </span>
-        </div>
-    </a>
-    <a href="/models/configurations/access-esm/" class="horizontal-card">
-        <div class="card-image-container">
-            <img src="/assets/model-config-logos/configurations-without-titles/access-esm.png" class="white-background img-contain"></img> 
-        </div>
-        <div class="card-text-container">
-            <span class="bold" >ACCESS-ESM</span>
-            <span>
-                ACCESS-ESM is a global climate model with additional land and ocean biogeochemical components to simulate both the physical climate and global biogeochemical cycles.
-            </span>
-        </div>
-    </a>
-    <a href="/models/configurations/access-om/" class="horizontal-card">
-        <div class="card-image-container">
-            <img src="/assets/model-config-logos/configurations-without-titles/access-om.png" class="white-background img-contain"></img> 
-        </div>
-        <div class="card-text-container">
-            <span class="bold" >ACCESS-OM</span>
-            <span>
-                ACCESS-OM is a global coupled ocean and sea ice model used to understand both physical and biogeochemical processes in the ocean.
-            </span>
-        </div>
-    </a>
-</div>
+<!-- Using pymdown.snippets extension; https://facelessuser.github.io/pymdown-extensions/extensions/snippets/ -->
+--8<-- "docs/models/configurations/index.md"
 
 ## ACCESS Model Components
 <div class="card-container">

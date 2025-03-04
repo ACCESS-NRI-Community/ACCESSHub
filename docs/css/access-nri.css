@@ -301,6 +301,7 @@
   padding: 0.5rem;
   width: max-content;
   height: 2.5rem;
+  margin: 0.5em;
 }
 .text-card:hover {
   border-color: var(--md-accent-fg-color);
@@ -1320,6 +1321,8 @@ img.intro-img {
 /* Style for icons before text (used for example in User Support and Contribute pages) */
 .icon-before-text {
   margin-right: 0.5em;
+  font-size: 1.5rem;
+  width: 1.5rem;
 }
 /* =============================================================== 
   Media queries for website responsiveness
